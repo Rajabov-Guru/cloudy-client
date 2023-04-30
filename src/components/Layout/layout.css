@@ -1,0 +1,27 @@
+.layout{
+    @apply h-screen bg-tertiary w-full
+}
+
+.layout-sidebar{
+    @apply h-full bg-tertiary text-white py-5 md:w-2/6 lg:w-1/6 hidden lg:block
+}
+
+.layout-main{
+    @apply flex-grow
+}
+
+.layout-body{
+    @apply w-full flex-grow overflow-y-auto
+}
+
+.layout-content{
+    @apply h-full w-1 bg-white flex-grow flex-shrink-0 lg:rounded-bl-[30px] overflow-auto
+}
+
+.layout-header{
+    @apply h-[9%] py-1 lg:rounded-tl-[30px] w-full bg-quinary drop-shadow-sm
+}
+
+.layout-infoBar{
+    @apply h-full md:w-1/4 lg:w-1/4 hidden md:block flex-shrink-0 overflow-y-auto bg-dark_white
+}

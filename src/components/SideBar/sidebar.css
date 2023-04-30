@@ -1,0 +1,10 @@
+.sidebar{
+    @apply h-full gap-14
+}
+.sidebar-header{
+    @apply container mx-auto
+}
+.sidebar-body{
+    @apply flex-grow
+}
+.sidebar-footer{}

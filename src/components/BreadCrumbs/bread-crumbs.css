@@ -1,0 +1,11 @@
+.bread-crumbs{
+    @apply gap-1 md:gap-2 items-center
+}
+
+.bread-crumbs-item{
+    @apply hover:bg-secondary_light rounded-full px-2 py-1 cursor-pointer after:text-red-500 p-1
+}
+
+.bread-crumbs-separator{
+    @apply text-2xl
+}

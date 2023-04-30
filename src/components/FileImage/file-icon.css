@@ -1,0 +1,19 @@
+.file-icon-wrapper{
+    @apply flex w-full
+}
+
+.file-icon-small{
+    @apply max-h-7
+}
+
+.file-icon-medium{
+    @apply max-h-7
+}
+
+.file-icon-large{
+    @apply max-h-28
+}
+
+.file-icon-big{
+    @apply max-h-7
+}

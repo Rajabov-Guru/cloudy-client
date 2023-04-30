@@ -1,0 +1,3 @@
+.ripple{
+    @apply absolute animate-ripple rounded-full bg-white scale-0
+}

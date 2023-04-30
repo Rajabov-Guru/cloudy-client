@@ -1,0 +1,7 @@
+.stack{
+    @apply flex
+}
+
+.stack-vertical{
+    @apply flex flex-col
+}

@@ -1,0 +1,18 @@
+.side-navbar{
+    @apply flex flex-col justify-items-center items-center text-sm xl:text-xl gap-5
+}
+
+.side-navbar-item{
+    @apply mr-4 w-full px-6 xl:px-9 py-3 cursor-pointer relative before:border-primary_light
+    focus:before:border-y focus:before:border-r-8 before:rounded-r-[16px]
+    before:z-0 before:absolute before:top-0 before:bottom-0 before:left-0 before:h-full before:bg-primary before:w-0
+    before:transition-[width] before:ease-in before:duration-200 focus:before:w-[90%] hover:before:w-[90%]
+}
+
+.side-navbar-item_active{
+    @apply before:border-r-8 before:w-[90%]
+}
+
+.side-navbar-item-content{
+    @apply flex items-center gap-3 z-40
+}

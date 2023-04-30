@@ -1,0 +1,48 @@
+.btn{
+    @apply px-3 py-2 rounded-3xl flex gap-2 items-center focus:outline hover:outline outline-4
+    justify-center cursor-pointer relative overflow-hidden md:text-xl text-xs
+}
+
+.btn-primary{
+    @apply bg-primary_light text-white outline-primary_lighter
+}
+
+.btn-secondary{
+    @apply bg-secondary text-black outline-secondary_light
+}
+
+.btn-tertiary{
+    @apply bg-tertiary text-white outline-primary_light
+}
+
+.btn-quarternary{
+    @apply bg-quarternary_dark text-white outline-quarternary
+}
+
+.btn-transparent{
+    @apply bg-transparent text-black outline-transparent
+}
+
+.btn-icon{
+    @apply text-xs md:text-lg lg:text-xl
+}
+
+.btn-icon-primary{
+    @apply text-white
+}
+
+.btn-icon-secondary{
+    @apply text-black
+}
+
+.btn-icon-tertiary{
+    @apply text-white
+}
+
+.btn-icon-quarternary{
+    @apply text-black
+}
+
+.btn-icon-transparent{
+    @apply text-gray-700
+}

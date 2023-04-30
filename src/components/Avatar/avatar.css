@@ -1,0 +1,7 @@
+.avatar{
+    @apply w-10 h-10 sm:w-12 sm:h-12
+}
+
+.avatar-img{
+    @apply rounded-full border
+}
