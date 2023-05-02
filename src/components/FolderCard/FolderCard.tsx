@@ -13,6 +13,7 @@ import {
 } from 'react-icons/all';
 import useRipple from '../Ripple/useRipple';
 import Button from '../Button/Button';
+import { Link } from 'react-router-dom';
 
 interface FolderCardProps {
   name: string;
@@ -21,11 +22,12 @@ interface FolderCardProps {
 const FolderCard = (props: FolderCardProps) => {
   const { name, createDate } = props;
 
-  const ref = useRef<HTMLButtonElement>(null);
+  const ref = useRef<HTMLAnchorElement>(null);
   const ripples = useRipple(ref);
 
   return (
-    <button
+    <Link
+      to=""
       ref={ref}
       className="group shadow relative flex md:flex-col items-center md:items-start md:justify-normal gap-4 px-5 py-3 bg-secondary rounded-lg border border-gray-200 overflow-hidden cursor-pointer focus:outline outline-2 outline-primary"
     >
@@ -42,7 +44,7 @@ const FolderCard = (props: FolderCardProps) => {
           <Button variant="transparent" Icon={FaEllipsisV} className="p-1 rounded-full" />
         </div>
       </div>
-    </button>
+    </Link>
   );
 };
 

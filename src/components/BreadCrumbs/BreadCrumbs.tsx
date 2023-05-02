@@ -14,10 +14,10 @@ const BreadCrumbs = (props: BreadCrumbsProps) => {
   return (
     <Stack className={`bread-crumbs ${className}`}>
       {items.map((item, index) => (
-        <>
-          <div key={index}>{item}</div>
+        <Stack className={`bread-crumbs ${className}`} key={index}>
+          <div>{item}</div>
           {index < items.length - 1 && <span className="bread-crumbs-separator">{separator}</span>}
-        </>
+        </Stack>
       ))}
     </Stack>
   );

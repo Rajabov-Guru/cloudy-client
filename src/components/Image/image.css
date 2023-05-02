@@ -1,19 +1,27 @@
 .image{
+    @apply flex mx-auto
+}
 
+.image > img{
+    @apply object-cover object-center flex-grow-0 w-full
+}
+
+.image-rounded{
+    @apply rounded-md
 }
 
 .image-small{
-
+    @apply max-h-7 max-w-[60px]
 }
 
 .image-medium{
-
+    @apply max-h-[100px]
 }
 
 .image-big{
-
+    @apply max-h-[135px]
 }
 
 .image-large{
-
+    @apply max-h-40
 }

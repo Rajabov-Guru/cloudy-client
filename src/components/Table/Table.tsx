@@ -1,20 +1,23 @@
 import React, { ReactNode } from 'react';
 import { WithChildrenSx } from '../../common/types';
+import './table.css';
 
 const Table = (props: WithChildrenSx<ReactNode>) => {
   const { children, className } = props;
   return (
-    <div className="shadow-md sm:rounded-lg">
-      <table className={`overflow-x-auto overflow-y-hidden min-w-full text-sm text-left text-gray-500 ${className}`}>
-        {children}
-      </table>
+    <div className="table-wrap">
+      <table className={`table ${className}`}>{children}</table>
     </div>
   );
 };
 
 const TableHead = (props: WithChildrenSx<ReactNode>) => {
   const { children, className } = props;
-  return <thead className={`text-xs text-gray-700 uppercase bg-gray-50 ${className}`}>{children}</thead>;
+  return (
+    <thead className={`table-head ${className}`}>
+      <tr>{children}</tr>
+    </thead>
+  );
 };
 
 const TableBody = (props: WithChildrenSx<ReactNode>) => {
@@ -24,12 +27,16 @@ const TableBody = (props: WithChildrenSx<ReactNode>) => {
 
 const TableRow = (props: WithChildrenSx<ReactNode>) => {
   const { children, className } = props;
-  return <tr className={`bg-white border-b hover:bg-gray-50 ${className}`}>{children}</tr>;
+  return <tr className={`table-row ${className}`}>{children}</tr>;
 };
 
 const TableCell = (props: WithChildrenSx<ReactNode>) => {
   const { children, className } = props;
-  return <td className={`w-4 p-4 ${className}`}>{children}</td>;
+  return (
+    <td className={`table-cell ${className}`}>
+      <div>{children}</div>
+    </td>
+  );
 };
 
 Table.Head = TableHead;

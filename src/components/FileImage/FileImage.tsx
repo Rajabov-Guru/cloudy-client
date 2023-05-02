@@ -1,10 +1,11 @@
 import React from 'react';
 import { FileIcon, defaultStyles, DefaultExtensionType } from 'react-file-icon';
 import './file-icon.css';
+import { Size } from '../../common/types';
 
 interface FileImageProps {
   ext: DefaultExtensionType;
-  size: 'small' | 'medium' | 'large' | 'big';
+  size: Size;
 }
 
 const FileImage = (props: FileImageProps) => {

@@ -3,6 +3,7 @@ import { AiFillStar, BsFillPinFill, FaEllipsisV } from 'react-icons/all';
 import Button from '../Button/Button';
 import useRipple from '../Ripple/useRipple';
 import FileImage from '../FileImage/FileImage';
+import Image from '../Image/Image';
 
 interface FileCardProps {
   name: string;
@@ -24,11 +25,7 @@ const FileCard = (props: FileCardProps) => {
     >
       {ripples}
       <div className="bg-dark_white flex h-full w-full justify-center">
-        {url && (
-          <div className="flex max-h-[135px] w-full">
-            <img className="object-cover object-center w-full h-full flex-grow-0" src={url} alt="" />
-          </div>
-        )}
+        {url && <Image src={url} size="large" />}
         {!url && <FileImage ext="docx" size="large" />}
       </div>
       <div className="p-4 flex flex-col items-start">

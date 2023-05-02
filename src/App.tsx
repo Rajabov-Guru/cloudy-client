@@ -1,7 +1,6 @@
 import React, { ComponentType, FC } from 'react';
 import Layout from './components/Layout/Layout';
 import SideBar from './components/SideBar/SideBar';
-import starIcon from './assets/star.svg';
 import Stack from './components/Stack/Stack';
 import {
   AiFillCloud,
@@ -16,7 +15,6 @@ import {
   BsFillTrashFill,
   FaCloudUploadAlt,
   FaEllipsisH,
-  FaFileWord,
   FaFolderPlus,
   ImDownload3,
   IoIosShareAlt,
@@ -30,12 +28,12 @@ import SideNavbar from './components/SideNavbar/SideNavbar';
 import { Link } from 'react-router-dom';
 import BreadCrumbs from './components/BreadCrumbs/BreadCrumbs';
 import ButtonLink from './components/ButtonLink/ButtonLink';
-import pinIcon from './assets/pin.png';
-import folderIcon from './assets/folder.png';
-import vertEllipsisIcon from './assets/vertical-ellipsis.png';
 import FolderCard from './components/FolderCard/FolderCard';
 import FileCard from './components/FileCard/FileCard';
-import CommonTable from './CommonTable';
+import Image from './components/Image/Image';
+import Table from './components/Table/Table';
+import Checkbox from './components/Checkbox/Checkbox';
+import FileImage from './components/FileImage/FileImage';
 
 interface NavbarItem {
   title: string;
@@ -152,7 +150,6 @@ const App: FC = () => {
               </div>
             </div>
             <div className="px-4 mt-5 my-6 overflow-x-auto">
-              {/*<CommonTable />*/}
               <p className="text-gray-500">Folders</p>
               <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5 py-4">
                 {folders.map((fol, index) => (
@@ -160,20 +157,48 @@ const App: FC = () => {
                 ))}
               </div>
               <p className="text-gray-500">Files</p>
-              <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5 py-4">
-                {files.map((fol, index) => (
-                  <FileCard key={index} name={fol.name} size={fol.size} url={fol.url} uploadDate={fol.uploadDate} />
-                ))}
-              </div>
+              <Table>
+                <Table.Head>
+                  <Table.Cell>
+                    <Checkbox />
+                  </Table.Cell>
+                  <Table.Cell>Type</Table.Cell>
+                  <Table.Cell>File Name</Table.Cell>
+                  <Table.Cell>Size</Table.Cell>
+                  <Table.Cell>Upload</Table.Cell>
+                  <Table.Cell>Update</Table.Cell>
+                </Table.Head>
+                <Table.Body>
+                  {files.map((f, index) => (
+                    <Table.Row key={index}>
+                      <Table.Cell>
+                        <Checkbox />
+                      </Table.Cell>
+                      <Table.Cell>
+                        {f.url ? <Image rounded src={f.url} size="small" /> : <FileImage ext="docx" size="small" />}
+                      </Table.Cell>
+                      <Table.Cell>{f.name}</Table.Cell>
+                      <Table.Cell>{f.size}</Table.Cell>
+                      <Table.Cell>{f.uploadDate}</Table.Cell>
+                      <Table.Cell>{f.uploadDate}</Table.Cell>
+                    </Table.Row>
+                  ))}
+                </Table.Body>
+              </Table>
+              {/*<div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5 py-4">*/}
+              {/*  {files.map((fol, index) => (*/}
+              {/*    <FileCard key={index} name={fol.name} size={fol.size} url={fol.url} uploadDate={fol.uploadDate} />*/}
+              {/*  ))}*/}
+              {/*</div>*/}
             </div>
           </Layout.Content>
           <Layout.InfoBar>
             <div className="container h-full mx-auto px-4 py-8 flex flex-col gap-5 mb-20">
               <div className="flex flex-col gap-5 h-full">
-                <img
-                  alt="hoho"
+                <Image
                   src="https://www.iguides.ru/upload/medialibrary/9f8/9f8fdff471b7d281f81f694c100b5adc.png"
-                  className="rounded-2xl"
+                  size="large"
+                  rounded
                 />
                 <div className="flex xl:gap-3 gap-1 justify-between">
                   {infoPanel.map((it) => (
